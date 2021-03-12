@@ -26,6 +26,7 @@ if value < cmin{
 }
 else if value > cmax
 {
+    
     cmax=value
 }
     }
