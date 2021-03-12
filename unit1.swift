@@ -1,4 +1,4 @@
-func bubblesort(_ test : inout[Int])-> [Int] {
+func bubblesort(_ test : inout[Int])-> [Int] {   //氣泡排序法
     var temp:Int
     for _ in 0...test.count{
     for count in 0...test.count-2{   
@@ -13,10 +13,10 @@ func bubblesort(_ test : inout[Int])-> [Int] {
     return test
     }
 var test1=[99,88,44,55,77,66,33,22,11]
-print(bubblesort(&test1))
+print(bubblesort(&test1)) // {11,22,33,44,55,66,77,88,99}
 
-
-func minMax(array:[Int])->(min:Int,max:Int){
+  
+func minMax(array:[Int])->(min:Int,max:Int){ //取最大最小
     var cmin = array[0]
     var cmax = array[0]
     for value in array[0..<array.count]
@@ -26,7 +26,7 @@ if value < cmin{
 }
 else if value > cmax
 {
-    
+
     cmax=value
 }
     }
@@ -43,7 +43,7 @@ func varible<N>(members: N...){
     }
 }
 
-func change(_ v1:inout Int , _ v2:inout Int)->(Int,Int){
+func change(_ v1:inout Int , _ v2:inout Int)->(Int,Int){ //數值互換
         var temp:Int
         temp=v1
         v1=v2
