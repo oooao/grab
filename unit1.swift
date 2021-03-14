@@ -53,3 +53,23 @@ func change(_ v1:inout Int , _ v2:inout Int)->(Int,Int){ //數值互換
 var v1=2
 var v2=10
 print(change(&v1,&v2))
+
+
+//    ****/5*    
+let str = "abcde"  //(String)
+var number=[UInt32](repeating:0 ,count:str.count/*字串長度*/)// 有預設值的陣列   
+var count = 0//計數陣列索引值
+
+// <---unicode Scalars.jpg
+for code in str.unicodeScalars {  //存取Unicode純量,重複str的字串長度次數  
+    number[count] = code.value    
+        switch number[count] {   //switch basic
+    case  97,101,108,111,117 : //ASCII碼
+    print("\(code) is a vowel")//母音
+    default:
+    print("\(code) is not a vowel")   
+}    
+count+=1
+}
+
+
