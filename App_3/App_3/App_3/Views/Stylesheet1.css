@@ -1,0 +1,14 @@
+﻿stacklayout label {
+    color: white;
+}
+
+^contentpage {
+    background-color: white;
+    font-family:Arial;
+}
+image{
+    display:inline-block;
+}
+button{
+    display:inline-block;
+}

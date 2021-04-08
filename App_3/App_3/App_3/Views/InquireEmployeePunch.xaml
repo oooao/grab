@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_3.Views.InquireEmployeePunch"
+             xmlns:vm="clr-namespace:App_3.ViewModels"
+             xmlns:local="DaysBetweenDates"
+             Title="員工打卡紀錄">
+
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <StyleSheet Source="Stylesheet1.css"/>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical">
+                <StackLayout 
+                 Orientation="Horizontal"
+                 HorizontalOptions="Start">
+                    <Image Source="a7.png"
+                 HorizontalOptions="End" 
+                 WidthRequest="25"
+                 Margin="10,10,0,0"
+                />
+                    <DatePicker x:Name="startDatePicker"
+                Format="D"
+                WidthRequest="250"
+                FontSize="16"
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                Margin="0,10,0,0"
+                />
+                </StackLayout>
+                <SearchBar Placeholder="搜尋. . ."
+                    CancelButtonColor="Black" 
+                    PlaceholderColor="Black" 
+                    TextColor="Black"
+                    HorizontalTextAlignment="Start"
+                    FontSize="Medium"
+                    FontAttributes="Bold"
+                    WidthRequest="10"
+                    HeightRequest="30"
+                    Margin="50,30,100,5"
+                    Keyboard="Text"/>
+                <Frame BorderColor="Black" HeightRequest="28" WidthRequest="1000"  Padding="20,8,20,8"  HasShadow="True">
+                    <StackLayout Orientation="Horizontal">
+                    <Label Text="人員" Margin="20,0" TextColor="Black" FontSize="20" FontAttributes="Bold"></Label>
+                        <Label Text="時間" Margin="40,0"  TextColor="Black" FontSize="20" FontAttributes="Bold"></Label>
+                    </StackLayout>
+                </Frame>
+
+ 
+                    <TableView  HasUnevenRows="true" >
+                    <TableSection>
+                        <ViewCell>
+                            <Grid Margin="15,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="35" />
+                                    <RowDefinition Height="35" />
+                                </Grid.RowDefinitions>
+                                <StackLayout Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                                    <Label Text="王曉明" Margin="0,10,0,0" TextColor="Black" FontAttributes="Bold" FontSize="18" ></Label>
+                                    <Label Text="上班 09:10" Margin="55,10,0,0"  TextColor="Firebrick" FontAttributes="Bold" FontSize="18"></Label>
+                                    <Label Text="遲到" Margin="90,10,30,0" TextColor="Firebrick" FontAttributes="Bold" FontSize="18"></Label>
+                                </StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                                        <Label Text="下班 17:05" Margin="55,0,0,0" TextColor="Navy" FontAttributes="Bold" FontSize="18"></Label>
+                                        <Label Text="正常" Margin="90,0,30,0" TextColor="Black" FontAttributes="Bold" FontSize="18"></Label>
+                                    </StackLayout>
+
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                        <ViewCell>
+                            <Grid Margin="15,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="35" />
+                                    <RowDefinition Height="35" />
+                                </Grid.RowDefinitions>
+                                <StackLayout Orientation="Vertical" >
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                                        <Label Text="batty" Margin="0,10,0,0" TextColor="Black" FontAttributes="Bold" FontSize="18" ></Label>
+                                        <Label Text="上班 09:10" Margin="55,10,0,0" HorizontalOptions="End" TextColor="Firebrick" FontAttributes="Bold" FontSize="18"></Label>
+                                        <Label Text="遲到" Margin="90,10,30,0" TextColor="Firebrick" FontAttributes="Bold" FontSize="18"></Label>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                                        <Label Text="下班 17:05" Margin="55,0,0,0" TextColor="Navy" FontAttributes="Bold" FontSize="18"></Label>
+                                        <Label Text="正常" Margin="90,0,30,0" TextColor="Black" FontAttributes="Bold" FontSize="18"></Label>
+                                    </StackLayout>
+
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </TableSection>
+                </TableView>
+               
+
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>

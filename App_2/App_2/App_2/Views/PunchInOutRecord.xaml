@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_2.Views.PunchInOutRecord"
+              xmlns:local="DaysBetweenDates"
+              Title="打卡紀錄">
+
+    <ContentPage.Resources>
+        <StyleSheet Source="/Stylesheet1.css"/>
+    </ContentPage.Resources>
+
+
+
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical"  Spacing="1" >
+                <StackLayout
+                 Orientation="Horizontal"
+                 HorizontalOptions="Start"
+                 >
+                    <Image 
+                    Source="a7.png"
+                    HorizontalOptions="Start"
+                    WidthRequest="25"
+                     Margin="20,20,0,5"/>
+                    <DatePicker  x:Name="startDatePicker"
+                    Format="D"
+                    FontAttributes="Bold"
+                     WidthRequest="220"
+                    HorizontalOptions="Start"
+                         />
+                </StackLayout>
+                
+                <TableView  HasUnevenRows="true">
+                    <TableSection >
+                        <ViewCell>
+                            <Grid Margin="15,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40" />
+                                    <RowDefinition Height="40" />
+                                </Grid.RowDefinitions>
+                                <StackLayout Orientation="Vertical" >
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="3月01日(一)" TextColor="Black" FontAttributes="Bold" FontSize="18" Padding="10,20,2,1"/>
+                                        <Label Text="上班" TextColor="Firebrick" FontAttributes="Bold" FontSize="18" Padding="15,20,2,1"/>
+                                        <Label Text="09:05" TextColor="Black" FontAttributes="Bold" FontSize="18" Padding="15,20,25,1"/>
+                                        <Label Text="遲到" TextColor="Firebrick" FontAttributes="Bold" FontSize="18" Padding="35,20,2,1"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="下班" TextColor="CornflowerBlue" FontAttributes="Bold" FontSize="18" Padding="131,1,2,1"/>
+                                        <Label Text="17:01"  TextColor="Black" FontAttributes="Bold" FontSize="18" Padding="15,1,25,5"/>
+                                        <Label Text="正常"  TextColor="Black" FontAttributes="Bold" FontSize="18" Padding="35,1,2,5"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                        
+                    </TableSection>
+                </TableView>
+               
+                <!--另一種方式-->
+                <Frame CornerRadius="20" HasShadow="True" BorderColor="LightGray" Margin="8,8">
+                    <StackLayout>
+                <StackLayout  Orientation="Horizontal"  HorizontalOptions="Start">
+                    <Label Text="3月01日(一)" FontAttributes="Bold" FontSize="18" Padding="10,1,2,1"/>
+                    <Label Text="上班" TextColor="Firebrick" FontAttributes="Bold" FontSize="18" Padding="15,1,2,1"/>
+                    <Label Text="09:05"  FontAttributes="Bold" FontSize="18" Padding="15,1,25,1"/>
+                    <Label Text="遲到" TextColor="Firebrick" FontAttributes="Bold" FontSize="18" Padding="35,1,2,1"/>
+                </StackLayout>
+                <StackLayout  Orientation="Horizontal"  HorizontalOptions="Start">
+                     <Label Text="下班" TextColor="CornflowerBlue" FontAttributes="Bold" FontSize="18" Padding="131,1,2,1"/>
+                    <Label Text="17:01"  FontAttributes="Bold" FontSize="18" Padding="15,1,25,5"/>
+                    <Label Text="正常" FontAttributes="Bold" FontSize="18" Padding="35,1,2,5"/>
+                </StackLayout>
+                    </StackLayout>
+                </Frame>
+               
+
+
+
+
+
+            </StackLayout>
+
+            
+        </ScrollView>
+    </Grid>
+
+</ContentPage>

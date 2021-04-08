@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_2.Views.GoOutRecord"
+              Title="公出紀錄">
+
+    <ContentPage.Resources>
+        <StyleSheet Source="/Stylesheet1.css"/>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="10,8,10,8" Spacing="1">
+                <StackLayout 
+                 Orientation="Horizontal"
+                 HorizontalOptions="Start"
+                >
+                    <Image 
+                    Source="a7.png"
+                    HorizontalOptions="Start"
+                    WidthRequest="25"
+                       />
+                    <DatePicker x:Name="startDatePicker"
+                    Format="D"
+                    WidthRequest="220"
+                    FontSize="16"
+                    HorizontalOptions="Start"
+                    FontAttributes="Bold"
+                         />
+                </StackLayout>
+                <!--
+                <TableView  HasUnevenRows="true">
+                    <TableSection >
+                        <ViewCell>
+                            <Grid Margin="15,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="80" />
+                                    <RowDefinition Height="80" />
+                                </Grid.RowDefinitions>
+                                <StackLayout Orientation="Vertical" >
+                                    <Label Text="地點 : 高雄85大樓"  TextColor="Black" FontAttributes="Bold" FontSize="18" Margin="20,20,1,0" />
+                                    <Label Text="出 : 2020-03-18 15:05" TextColor="DarkCyan" FontAttributes="Bold" FontSize="18" Margin="20,0,0,0"/>
+                                    <Label Text="回 : 2020-03-18 17:05" TextColor="Navy" FontAttributes="Bold" FontSize="18" Margin="20,0,0,0"/>
+                                    <Label  Margin="20,0,0,10" TextColor="DimGray">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <FormattedString.Spans>
+                                                    <Span Text="狀態 : " TextColor="Black" FontAttributes="Bold" FontSize="18"/>
+                                                    <Span Text="已核准" TextColor="Black" FontAttributes="Bold" FontSize="18"  />
+                                                </FormattedString.Spans>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </TableSection>
+                </TableView>
+                -->
+                <Frame Margin="10,10" CornerRadius="20" HasShadow="True" BorderColor="LightGray">
+                <StackLayout >
+                    <Label Text="地點 : 全聯" FontAttributes="Bold" FontSize="18" Margin="20,5,1,0" />
+                    <Label Text="出 : 2020-03-18 16:05" TextColor="DarkCyan" FontAttributes="Bold" FontSize="18" Margin="20,0,0,0"/>
+                    <Label Text="回 : 2020-03-18 16:25" TextColor="Navy" FontAttributes="Bold" FontSize="18" Margin="20,0,0,0"/>
+                    <Label  Margin="20,0,0,10" TextColor="DimGray">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="狀態 : " TextColor="Black" FontAttributes="Bold" FontSize="18"/>
+                                        <Span Text="未核准" TextColor="DarkRed" FontAttributes="Bold" FontSize="18"  />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+                </Frame>
+                
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

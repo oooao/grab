@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_2.Views.PunchInOut"
+             xmlns:maps="assembly=Xamarin.Forms.Maps"
+             Title="打卡"
+             >
+  
+    <ContentPage.Resources>
+        <StyleSheet Source="/Stylesheet1.css"/>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="5,10,5,10" Spacing="1">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Frame
+                    BorderColor="Gray"
+                    HasShadow="True"
+                    CornerRadius="20"
+                    HeightRequest="120"
+                    WidthRequest="120"
+                    HorizontalOptions="Start"
+                    Margin="4,10,4,10">
+                        <StackLayout>
+                            <Label Text="2021-03-26" TextColor="Black" HorizontalOptions="Center" FontSize="17" FontAttributes="Bold" Margin="5"/>
+                            <Label Text="週四" TextColor="Black" HorizontalOptions="Center" FontSize="17" FontAttributes="Bold"/>
+                            <Label Text="9:00" TextColor="Black" HorizontalOptions="Center" FontSize="33" FontAttributes="Bold"/>
+                        </StackLayout>
+                    </Frame>
+                    <Image Source="p2.png"
+                       HeightRequest="110"
+                       WidthRequest="220"
+                       HorizontalOptions="End"
+                       />
+            </StackLayout>
+            <Label Text="目前位置:高雄市楠梓區卓越路2號" FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="5,20"></Label>
+                <StackLayout
+                 Orientation="Horizontal"
+                 HorizontalOptions="Center">
+                    <ImageButton  Source="work2.png"
+                        BackgroundColor="Crimson"
+                              HeightRequest="150"
+                              WidthRequest="150"
+                              CornerRadius="30"
+                              Margin="10,10,6,10"
+                              HorizontalOptions="Start">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale"
+                            Value="1" />
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale"
+                            Value="0.8" />
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </ImageButton>
+                    <ImageButton  Source="workoff2.png"
+                        BackgroundColor="LightSkyBlue"
+                              HeightRequest="150"
+                              WidthRequest="150"
+                              CornerRadius="30"
+                                  Margin="6,10,10,10"
+                              HorizontalOptions="Center">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale"
+                            Value="1" />
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale"
+                            Value="0.8" />
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </ImageButton>
+                    </StackLayout>
+                <StackLayout Margin="0,10"
+                 Orientation="Horizontal"
+                 HorizontalOptions="Center">
+                    <ImageButton  Source="goout.png"
+                              HeightRequest="130"
+                              WidthRequest="130"
+                              CornerRadius="30"
+                              HorizontalOptions="Start">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale"
+                            Value="1" />
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale"
+                            Value="0.8" />
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </ImageButton>
+                    <ImageButton  Source="stop.png"
+                              HeightRequest="130"
+                              WidthRequest="130"
+                              CornerRadius="30"
+                              HorizontalOptions="Center">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale"
+                            Value="1" />
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale"
+                            Value="0.8" />
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </ImageButton>
+                    <ImageButton  Source="goback.png"
+                              HeightRequest="130"
+                              WidthRequest="130"
+                              CornerRadius="30"
+                              HorizontalOptions="End">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale"
+                            Value="1" />
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale"
+                            Value="0.8" />
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </ImageButton>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

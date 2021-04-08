@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_3.Views.AuditGoOut"
+             xmlns:vm="clr-namespace:App_3.ViewModels"
+             Title="審核公出">
+
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <StyleSheet Source="Stylesheet1.css"/>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+
+        
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+                <Frame BorderColor="LightGray" HasShadow="True">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Start" >
+                            <Image Source="a18.png"/>
+                            <Label Text="Amy" Margin="0,5" TextColor="Black" FontSize="18" FontAttributes="Bold"></Label>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                            <Image Source="in2.png"/>
+                            <Label Text="高雄85大樓"  Margin="0,5" TextColor="Black" FontSize="18" FontAttributes="Bold"></Label>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Start" >
+                            <Image Source="message.png"/>
+                            <Label Margin="0,5" Text="...more" TextColor="Gray" FontSize="18" FontAttributes="Bold"></Label>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Start" >
+                            <Image Source="date.png"/>
+                            <Label Text="去: 2021-03-28 13:00" Margin="0,5" TextColor="Black" FontSize="18" FontAttributes="Bold"></Label>
+                        </StackLayout>
+                        <Label Text="回: 2021-03-28 15:00" Margin="43,0" TextColor="Black" FontSize="18" FontAttributes="Bold"></Label>
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                            <Button Text="✓ 審核通過" Margin="10,15,15,15" BackgroundColor="LightSeaGreen" CornerRadius="10" FontSize="17" FontAttributes="Bold"/>
+                            <Button Text="✘ 取消申請" Margin="15,15,10,15" BackgroundColor="Firebrick" CornerRadius="10" FontSize="17" FontAttributes="Bold"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                
+                
+            </StackLayout>
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>

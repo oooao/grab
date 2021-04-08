@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_3.Views.EditEmployee"
+             xmlns:vm="clr-namespace:App_3.ViewModels"
+             Title="編輯員工資料">
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <StyleSheet Source="Stylesheet1.css"/>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+                <Frame Margin="1"
+               BorderColor="Black"
+               CornerRadius="50"
+               HeightRequest="60"
+               WidthRequest="60"
+               IsClippedToBounds="True"
+               HorizontalOptions="Center"
+               VerticalOptions="Center">
+                    <Image Source="p1.png"
+                 Aspect="AspectFill"
+                 Margin="-20"
+                 HeightRequest="250"
+                 WidthRequest="250" />
+                </Frame>
+
+
+                <Label Text="姓名(ID)" FontSize="16" Margin="1" Padding="0,10,0,0" FontAttributes="Bold" TextColor="Black"></Label>
+                <Entry FontSize="20" Placeholder="JOHN" TextColor="Black" HorizontalOptions="Center" WidthRequest="800" Margin="0,0,0,0"></Entry>
+                <Label Text="部門" FontSize="16" Margin="1" Padding="0,10,0,0" FontAttributes="Bold" TextColor="Black"></Label>
+                <Entry FontSize="20"  Placeholder="行銷部" IsReadOnly="true" TextColor="Black" HorizontalOptions="Center" WidthRequest="800" Margin="0,0,0,0"></Entry>
+                <Label Text="職稱" FontSize="16" Margin="1" Padding="0,10,0,0" FontAttributes="Bold" TextColor="Black"></Label>
+                <Entry FontSize="20" Placeholder="經理" IsReadOnly="true" TextColor="Gray" HorizontalOptions="Center" WidthRequest="800"></Entry>
+                <Label Text="電話" FontSize="16" Margin="1" Padding="0,10,0,0" FontAttributes="Bold" TextColor="Black"></Label>
+                <Entry FontSize="20" Placeholder="電話" TextColor="Black" HorizontalOptions="Center" WidthRequest="800" Keyboard="Telephone"></Entry>
+                <Label Text="Email" FontSize="16" Margin="1" Padding="0,10,0,0" FontAttributes="Bold" TextColor="Black"></Label>
+                <Entry FontSize="20" Placeholder="Email" TextColor="Black" HorizontalOptions="Center" WidthRequest="800" Keyboard="Email"></Entry>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button  Margin="30" Text="刪除員工"
+                        FontSize="20"
+                        HorizontalOptions="Start"
+                        FontAttributes="Bold"
+                        CornerRadius="20"
+                        BackgroundColor="Firebrick"
+                        TextColor="White" />
+                    <Button Margin="30" Text="完成編輯"
+                        FontSize="20"
+                        HorizontalOptions="Center"
+                        FontAttributes="Bold"
+                        CornerRadius="20"
+                        BackgroundColor="LightSteelBlue"
+                        TextColor="White" />
+            </StackLayout>
+          </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

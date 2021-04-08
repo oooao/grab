@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_2.Views.GoOut"
+             xmlns:vm="clr-namespace:App_2.ViewModels"
+             xmlns:local="DaysBetweenDates"
+             xmlns:local2="SetTimer"
+             Title="公出申請">
+
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <StyleSheet Source="/Stylesheet1.css"/>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="15,10,15,10" >
+                <Label FontSize="20" Padding="0,5,0,0"  >
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="*" TextColor="Firebrick" FontSize="20"  FontAttributes="Bold" />
+                                <Span Text="公出" TextColor="DimGray" FontSize="20"  FontAttributes="Bold" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                 
+                <DatePicker x:Name="startDatePicker"
+                    HorizontalOptions="End"
+                    WidthRequest="800" 
+                   FontSize="16"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                    Format="D"
+                         />
+                
+                <TimePicker x:Name="_timePicker"
+                   HorizontalOptions="End"
+                   WidthRequest="800" 
+                   FontSize="16"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                    Time="11:00:00"
+                    Format="T"
+               />
+                
+                <Label FontSize="200" Padding="0,5,0,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="*" TextColor="Firebrick" FontSize="20"  FontAttributes="Bold" />
+                                <Span Text="回來" TextColor="DimGray" FontSize="20"  FontAttributes="Bold" />
+                                
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <DatePicker x:Name="endDatePicker"
+                HorizontalOptions="End"
+                WidthRequest="800" 
+                FontSize="16"
+                TextColor="Black"
+                FontAttributes="Bold"
+                MinimumDate="{Binding Source={x:Reference startDatePicker},Path=Date}"
+                Format="D"
+                />
+                <TimePicker x:Name="_timePicker2"
+                    HorizontalOptions="End"
+                    WidthRequest="800" 
+                    FontSize="16"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    Time="11:00:00"
+                    Format="T"
+                     />
+                <Label FontSize="20" Padding="0,5,0,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="*" TextColor="Firebrick" FontSize="20"  FontAttributes="Bold" />
+                                <Span Text="地點" TextColor="DimGray" FontSize="20"  FontAttributes="Bold" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Entry Placeholder="地點" TextColor="Black" 
+                       HorizontalOptions="Start"
+                       WidthRequest="400" 
+                       ClearButtonVisibility="WhileEditing"
+                       ></Entry>
+                <Label FontSize="20" Padding="0,5,0,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="*" TextColor="Firebrick" FontSize="20"  FontAttributes="Bold" />
+                                <Span Text="事由" TextColor="DimGray" FontSize="20"  FontAttributes="Bold" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Entry Placeholder="事由" TextColor="Black"
+                       HeightRequest="100"
+                       MaxLength="100"
+                        HorizontalOptions="Start"
+                        WidthRequest="400"
+                        ClearButtonVisibility="WhileEditing"></Entry>
+                <Label Text="1/100" TextColor="Black" HorizontalOptions="End"/>
+                <Button Margin="0,10,0,0" Text="提出申請"
+                        FontSize="20"
+                        HorizontalOptions="Center"
+                        FontAttributes="Bold"
+                        CornerRadius="20"
+                        BackgroundColor="LightSteelBlue"
+                        TextColor="White" />
+            </StackLayout>
+           
+        </ScrollView>
+    </Grid>
+
+</ContentPage>
